@@ -9,8 +9,8 @@
     <div class="container">
         <div class="d-flex justify-content-between align-items-center my-5">
             <!—flex-direction view with Margin 5-->
-                <div class="h2">Liste de citations</div>
-                <a href="{{route("todo.create")}}" class="btn btn-primary btn-lg">Ajouter une citation</a>
+                <div class="h2">Liste de tâches</div>
+                <a href="{{route("todo.create")}}" class="btn btn-primary btn-lg">Ajouter une tâche</a>
         </div>
         @if (session('success'))
             <div class="alert alert-success">
@@ -23,23 +23,23 @@
                 <th>Nom</th>
                 <th>Description</th>
                 <th>Auteur</th>
-                <th>Date</th>
+                <th>Date de création</th>
                 <th>Action</th>
             </tr>
             @foreach($todos as $todo)
                 <tr valign="middle">
                     <td>
-                    {{$todo->name}}
-                </td>
-                    <td>
-                        "{{$todo->description}}"
+                        {{$todo->name}}
                     </td>
                     <td>
-                    {{$todo->author}}
-                </td>
+                        {{$todo->description}}
+                    </td>
                     <td>
-                    {{$todo->date}}
-                </td>
+                        {{$todo->author}}
+                    </td>
+                    <td>
+                        {{$todo->created_at}}
+                    </td>
                     <td>
                         <a href="{{route("todo.edit", $todo->id)}}" class="btn btn-success btn-sm">Modifier</a>
                         <a href="{{route("todo.delete", $todo->id)}}" class="btn btn-danger btn-sm">Supprimer</a>

@@ -6,8 +6,8 @@
 @section('main-section')
 <div class="container">
     <div class="d-flex justify-content-between align-items-center my-5"> <!-- Margin 5-->
-        <div class="h2">Modifier ma citation</div>
-        <a href="{{route("todo.home")}}" class="btn btn-primary btn-lg">Back</a>
+        <div class="h2">Modifier ma tâche</div>
+        <a href="{{route("todo.home")}}" class="btn btn-primary btn-lg">Retour</a>
     </div>
     <div class="card">
         <div class="card-body">

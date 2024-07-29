@@ -23,24 +23,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/about">About</a>
+              <a class="nav-link active" aria-current="page" href="{{route('todo.about')}}">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-disabled="true" href="/contact-us">Contact</a>
+              <a class="nav-link" aria-disabled="true" href="{{route('todo.contact')}}">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/articles">Articles</a>
+              <a class="nav-link" href="/">Mes tâches</a>
             </li>
-            @guest
-        <a href="{{ route('register') }}" style="text-decoration:none">Créer un compte</a>
-        <a href="{{ route('login') }}" style="text-decoration:none">Login</a>
-      @endguest
-            @auth
-        <a href="{{ route('profile') }}">Mon profil</a>
-        <h6>
-          {{Auth::user()->name}}(connecté)
-        </h6>
-      @endauth
           </ul>
         </div>
       </div>
@@ -48,12 +38,14 @@
   </header>
   <div class="bg-dark">
     <div class="container py-3"> <!-- container with padding 3 -->
-      <div class="h1 text-white">Gestionnaire de citations</div>
+      <div class="h1 text-white">Gestionnaire de tâches</div>
     </div>
   </div>
+  @yield('about')
+  @yield('contact')
   @yield('main-section')
   @yield('contenu')
-  @yield('login')
+
 </body>
 
 </html>
